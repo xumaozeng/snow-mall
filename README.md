@@ -9,6 +9,11 @@ $ npm i yarn tyarn -g // 国内源
 $ tyarn // 安装依赖
 ```
 
+Generate page,
+```bash
+$ npx umi g page more/index --typescript --less
+```
+
 Start the dev server,
 
 ```bash
