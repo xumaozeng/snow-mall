@@ -1,11 +1,51 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
+import { TabBar } from 'antd-mobile';
+import { history } from 'umi';
 
-export default class BottomNav extends Component {
+const menu = [
+  {
+    title: '首页',
+    link: '/',
+    icon: 'shouye',
+  },
+  {
+    title: '购物车',
+    link: '/cart',
+    icon: '3',
+  },
+  {
+    title: '订单列表',
+    link: '/olist',
+    icon: 'icon-',
+  },
+  {
+    title: '我的',
+    link: '/user',
+    icon: 'wode',
+  },
+];
+
+interface BottomNavProps {
+  pathname: string;
+}
+export default class BottomNav extends Component<BottomNavProps> {
   render() {
+    const { pathname } = this.props;
     return (
-      <div>
-        <h3>BottomNav</h3>
-      </div>
+      <TabBar tintColor="red">
+        {menu.map(({ title, link, icon }) => (
+          <TabBar.Item
+            key={link}
+            title={title}
+            icon={<span className={'iconfont icon-' + icon} />}
+            selectedIcon={<span className={'red iconfont icon-' + icon} />}
+            selected={pathname === link}
+            onPress={() => {
+              history.push(link);
+            }}
+          />
+        ))}
+      </TabBar>
     );
   }
 }
