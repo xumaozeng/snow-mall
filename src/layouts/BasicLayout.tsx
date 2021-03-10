@@ -7,12 +7,11 @@ import styles from './BasicLayout.less';
 interface BasicLayoutProps {
   location: Location;
   dispatch: Dispatch;
-  user: any;
 }
 
 const BasicLayout: React.FC<BasicLayoutProps> = (props) => {
   console.log('props', props);
-  const { children, location, dispatch, user } = props;
+  const { children, location, dispatch } = props;
   const { pathname } = location;
 
   useEffect(() => {
