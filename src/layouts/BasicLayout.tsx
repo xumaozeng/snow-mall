@@ -1,7 +1,9 @@
 import BottomNav from '@/components/BottomNav';
 import React, { useEffect } from 'react';
-import '@/static/iconfont/iconfont.css';
 import { Location, connect, Dispatch } from 'umi';
+import { ConnectState } from '@/models/connect';
+
+import '@/static/iconfont/iconfont.css';
 import styles from './BasicLayout.less';
 
 interface BasicLayoutProps {
@@ -33,4 +35,4 @@ const BasicLayout: React.FC<BasicLayoutProps> = (props) => {
   );
 };
 
-export default connect(({ user }: any) => ({ user }))(BasicLayout);
+export default connect(({ user }: ConnectState) => ({ user }))(BasicLayout);
