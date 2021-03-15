@@ -11,6 +11,7 @@ interface BasicLayoutProps {
   dispatch: Dispatch;
 }
 
+// React.FC表示function component函数组件,<props>表示属性类型
 const BasicLayout: React.FC<BasicLayoutProps> = (props) => {
   console.log('props', props);
   const { children, location, dispatch } = props;
