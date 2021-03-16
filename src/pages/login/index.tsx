@@ -2,6 +2,7 @@ import { ConnectProps, ConnectState, UserModelState } from '@/models/connect';
 import React from 'react';
 import { connect, Redirect } from 'umi';
 import styles from './index.less';
+import LoginForm from './LoginForm';
 
 interface LoginProps extends ConnectProps {
   user: UserModelState;
@@ -15,8 +16,9 @@ const Login: React.FC<LoginProps> = ({ user, location }) => {
     return <Redirect to={from} />;
   }
   return (
-    <div>
-      <h1 className={styles.title}>Page login/index</h1>
+    <div className={styles.main}>
+      <div className={styles.logo}></div>
+      <LoginForm />
     </div>
   );
 };
