@@ -1,5 +1,5 @@
 // model state 类型
-import { Location } from 'umi';
+import { Location, Dispatch } from 'umi';
 import { UserModelState } from './user';
 
 export interface ConnectState {
@@ -8,6 +8,7 @@ export interface ConnectState {
 
 export interface ConnectProps {
   location: Location & { state: { from: string } };
+  dispatch: Dispatch;
 }
 
 export { UserModelState };

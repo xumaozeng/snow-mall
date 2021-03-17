@@ -1,15 +1,35 @@
 import React from 'react';
 import { InputItem, WingBlank, WhiteSpace, Button } from 'antd-mobile';
+import { createForm } from 'rc-form';
 
-interface LoginFormProps {}
-const LoginForm: React.FC<LoginFormProps> = (props) => {
+interface LoginFormProps {
+  form: {
+    getFieldProps: Function;
+    getFieldsValue: Function;
+  };
+  handleSubmit: Function;
+}
+const LoginForm: React.FC<LoginFormProps> = ({ form, handleSubmit }) => {
+  const { getFieldProps, getFieldsValue } = form;
+  const submit = () => {
+    // 登录、搜集信息
+    let value = getFieldsValue();
+    handleSubmit(value);
+  };
+
   return (
     <WingBlank size="lg">
       <WhiteSpace size="lg" />
-      <InputItem type="text" placeholder="请输入账号" clear>
+      <InputItem
+        {...getFieldProps('name')}
+        type="text"
+        placeholder="请输入账号"
+        clear
+      >
         账号
       </InputItem>
       <InputItem
+        {...getFieldProps('password')}
         type="password"
         placeholder="请输入密码"
         clear
@@ -18,8 +38,10 @@ const LoginForm: React.FC<LoginFormProps> = (props) => {
         密码
       </InputItem>
       <WhiteSpace size="lg" />
-      <Button type="primary">登录</Button>
+      <Button type="primary" onClick={submit}>
+        登录
+      </Button>
     </WingBlank>
   );
 };
-export default LoginForm;
+export default createForm()(LoginForm);
