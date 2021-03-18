@@ -1,10 +1,31 @@
-import React from 'react';
-import styles from './index.less';
+import { ConnectProps, ConnectState, UserModelState } from '@/models/connect';
+import React, { useEffect } from 'react';
+import { connect } from 'umi';
+import Header from './Header';
+import Logout from './Logout';
+import MyList from './MyList';
 
-export default function Page() {
+interface UserProps extends ConnectProps {
+  user: UserModelState;
+}
+const User: React.FC<UserProps> = ({ dispatch, user }) => {
+  useEffect(() => {
+    // dispatch
+    dispatch({ type: 'user/queryDetail' });
+  }, []);
+
+  const { name, icon } = user.detail;
+  const logout = () => {
+    // dispatch
+    dispatch({ type: 'user/logout' });
+  };
+
   return (
     <div>
-      <h1 className={styles.title}>Page user/index</h1>
+      <Header name={name} icon={icon} />
+      <MyList />
+      <Logout logout={logout} />
     </div>
   );
-}
+};
+export default connect(({ user }: ConnectState) => ({ user }))(User);
