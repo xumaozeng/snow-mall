@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import SearchInput from './SearchInput';
 import List from './List';
 import { ProductType } from '@/@types/product';

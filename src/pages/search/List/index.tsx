@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import { ProductType } from '@/@types/product';
 import { Card, ListView, WingBlank, Icon } from 'antd-mobile';
 import styles from './index.less';
