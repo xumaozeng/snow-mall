@@ -11,6 +11,7 @@ import CartAndBuy from './CartAndBuy';
 
 class Product extends Component<IRoute, {}> {
   state: ProductType = {
+    id: '',
     imgs: [],
     price: 0,
     title: '',

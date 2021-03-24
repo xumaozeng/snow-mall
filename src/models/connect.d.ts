@@ -1,14 +1,16 @@
 // model state 类型
 import { Location, Dispatch } from 'umi';
 import { UserModelState } from './user';
-
-export interface ConnectState {
-  user: UserModelState;
-}
+import { CartModelState } from './cart';
 
 export interface ConnectProps {
   location: Location & { state: { from: string } };
   dispatch: Dispatch;
+}
+
+export interface ConnectState {
+  user: UserModelState;
+  cart: CartModelState;
 }
 
 export { UserModelState };
