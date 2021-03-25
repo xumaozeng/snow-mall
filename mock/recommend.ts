@@ -1,5 +1,4 @@
 var Mock = require('mockjs');
-import { Request, Response } from 'express';
 import { getProduct } from './util';
 import { productList } from './const';
 

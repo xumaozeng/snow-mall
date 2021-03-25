@@ -1,5 +1,4 @@
 var Mock = require('mockjs');
-import { Request, Response } from 'express';
 
 function getList() {
   let res = [];
