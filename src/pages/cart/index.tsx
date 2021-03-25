@@ -34,7 +34,7 @@ class Cart extends Component<ConnectProps, CartState> {
 
   checkedAllChange = (allChecked: boolean) => {
     let data = [...this.state.data];
-    data.every((item) => (item.checked = allChecked));
+    data.forEach((item) => (item.checked = allChecked));
     this.setState({ data });
   };
 

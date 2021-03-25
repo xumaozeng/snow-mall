@@ -1,7 +1,7 @@
 var Mock = require('mockjs');
 import { productList } from './const';
 
-export function getProduct(index) {
+export function getProduct(index?: any) {
   const res =
     index !== undefined
       ? productList[index]
