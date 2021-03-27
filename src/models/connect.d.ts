@@ -13,4 +13,4 @@ export interface ConnectState {
   cart: CartModelState;
 }
 
-export { UserModelState };
+export { UserModelState, CartModelState };

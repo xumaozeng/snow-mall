@@ -41,9 +41,11 @@ class Cart extends Component<ConnectProps, CartState> {
   goPay = () => {
     const { data } = this.state;
     const checkedData = data.filter((item) => item.checked);
-    this.props.dispatch({ type: 'cart/saveCart', payload: { data } });
+    this.props.dispatch({
+      type: 'cart/saveCart',
+      payload: { data: checkedData },
+    });
     history.push('/confirmBill');
-    console.log('checkedData', checkedData);
   };
 
   render() {
