@@ -1,5 +1,3 @@
-var Mock = require('mockjs');
-
 export var productList = [
   {
     catgory: '书',
