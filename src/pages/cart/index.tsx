@@ -1,6 +1,7 @@
 import { CartProductType } from '@/@types/product';
 import { ConnectState, ConnectProps } from '@/models/connect';
 import { query } from '@/services/cart';
+import { editCart } from '@/services/editCart';
 import { Component } from 'react';
 import { connect, history } from 'umi';
 import styles from './index.less';
@@ -29,7 +30,10 @@ class Cart extends Component<ConnectProps, CartState> {
     } else {
       Object.assign(data[index], newState);
     }
-    this.setState({ data });
+
+    editCart({ id, count }).then((res) => {
+      this.setState({ data });
+    });
   };
 
   checkedAllChange = (allChecked: boolean) => {

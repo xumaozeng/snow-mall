@@ -4,7 +4,7 @@ import { UserModelState } from './user';
 import { CartModelState } from './cart';
 
 export interface ConnectProps {
-  location: Location & { state: { from: string } };
+  location?: Location & { state: { from: string } };
   dispatch: Dispatch;
 }
 

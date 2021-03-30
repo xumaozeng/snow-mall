@@ -9,7 +9,7 @@ import classnames from 'classnames';
 import styles from './[id].less';
 import CartAndBuy from './CartAndBuy';
 
-class Product extends Component<IRoute, {}> {
+class Product extends Component<IRoute, ProductType> {
   state: ProductType = {
     id: '',
     imgs: [],
@@ -37,7 +37,7 @@ class Product extends Component<IRoute, {}> {
           <p className="font14">{title}</p>
           <Tags tags={tags} />
         </Card>
-        <CartAndBuy {...this.state} />
+        <CartAndBuy product={this.state} />
       </div>
     );
   }
