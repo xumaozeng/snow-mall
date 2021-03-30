@@ -1,15 +1,16 @@
 import React, { useCallback } from 'react';
-import { connect, history, Link } from 'umi';
+import { connect, Dispatch, history, Link } from 'umi';
 import classnames from 'classnames';
 import styles from './index.less';
 import { ProductType } from '@/@types/product';
 import { Toast } from 'antd-mobile';
-import { ConnectProps, CartModelState, ConnectState } from '@/models/connect';
+import { CartModelState, ConnectState } from '@/models/connect';
 import { editCart } from '@/services/editCart';
 
-interface CartAndBuyProps extends ConnectProps {
+interface CartAndBuyProps {
   product: ProductType;
   cart: CartModelState;
+  dispatch: Dispatch;
 }
 
 const CartAndBuy: React.FC<CartAndBuyProps> = ({ product, dispatch }) => {

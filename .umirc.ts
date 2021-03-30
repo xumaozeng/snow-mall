@@ -1,6 +1,7 @@
 import { defineConfig } from 'umi';
 
 export default defineConfig({
+  title: '商城实战',
   // 编译提速
   nodeModulesTransform: {
     type: 'none',
