@@ -2,6 +2,10 @@ import { defineConfig } from 'umi';
 
 export default defineConfig({
   title: '商城实战',
+  // hash路由不需要服务端配置
+  history: { type: 'hash' },
+  // 文件路径
+  base: '/',
   // 编译提速
   nodeModulesTransform: {
     type: 'none',
